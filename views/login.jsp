@@ -2,7 +2,7 @@
 
 <jsp:include page="/views/header.jsp" />
 		
-<div id='DataEntry'>
+<div id='content'>
 	
 	<div id="DataEntryPrompt">BrowserVPN</div>
 	<form action="Login" method="POST">

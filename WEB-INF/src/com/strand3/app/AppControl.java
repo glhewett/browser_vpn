@@ -34,7 +34,6 @@ public class AppControl extends HttpServlet {
         	// create action handler class by name
             Class actionclass=null;
             try {
-            	System.err.println(getInitParameter("defaultClass") + "." + pathsplit[1]);
                 actionclass = Class.forName(getInitParameter("defaultClass") + "." + pathsplit[1]);             
             } catch (ClassNotFoundException cnf) {
                 //Try searching for the class directly
@@ -44,7 +43,7 @@ public class AppControl extends HttpServlet {
         	
         	// polymorphic call to abstract run() method
             String view=actionhandler.run(req);
-            
+            req.setAttribute("title", "umm");
             // Add view directory to the beginning of the view
             view = getInitParameter("viewsDir") + view;
             

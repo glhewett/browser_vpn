@@ -28,12 +28,15 @@ public class Login extends AppActionAdapter {
 			return "login.jsp";
 		}
 
+        // It is required for the user to provide and username and a
+        // pasword, and if they do not, then there is not reason to go
+        // forward.
 		if (0 == req.getParameter("username").length()) {
 			handleException(req, new Exception("Username is required"));
 		}
 		
 		if (0 == req.getParameter("password").length()) {
-			return "error.jsp";
+			handleException(req, new Exception("Username is required"));
 		}
 		return "login.jsp";
 	}

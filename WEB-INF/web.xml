@@ -8,9 +8,15 @@
 
     <display-name>Browser VPN</display-name>
     <description>
-    Yo!
+    Attempting to become a clone of an SSL-VPN.
     </description>
-
+  	
+  	<!-- Define the Java Standard Tag Library (JSTL) -->
+  	<taglib>
+   		<taglib-uri>http://jakarta.apache.org/taglibs/input-1.0</taglib-uri>
+   		<taglib-location>/WEB-INF/taglibs-input.tld</taglib-location>
+  	</taglib>
+    
     <servlet>
         <servlet-name>myproxy</servlet-name>
         <servlet-class>BrowserVPNServlet</servlet-class>
@@ -39,11 +45,7 @@
         <url-pattern>/App/*</url-pattern>
     </servlet-mapping>
 
-  	<!-- Define the Java Standard Tag Library (JSTL) -->
-  	<taglib>
-   		<taglib-uri>http://jakarta.apache.org/taglibs/input-1.0</taglib-uri>
-   		<taglib-location>/WEB-INF/taglibs-input.tld</taglib-location>
-  	</taglib>
+
 <!-- 
     <servlet>
         <servlet-name>jspAssign</servlet-name>

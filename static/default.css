@@ -1,22 +1,25 @@
 body {
-    position: absolute:
-    right: 300px;
-    background-color: #fff;
+    background-color: #cbcbcb;
     font-family: arial, sans-serif;
     font-size: 10pt;
-    margin: 10px;
-    width: 200px;
-	border: 1px solid #ff0000;
 }
 
-#Content {
-	position: absolute;
-	right: 200;
-    left: 10%;
+#document {
+	margin: 10px;
+    margin-left: 15px;
+    bottom: 10px;
+	background-color: #ffffff;
+	border: 1px solid #0000cb;
+    width: 720px;
+    height: 100%;
+}
+
+#document h1 {
+	color: #0000cb;
+}
+
+#content {
 	padding: 25px;
-	background-color: #CBCBCB;
-	border: 1px solid #333333;
-    margin-top: 20px;
 }
 
 #DataEntryPrompt {

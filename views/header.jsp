@@ -8,4 +8,5 @@
 <script type="text/javascript" src="../static/default.js"></script>
 </head>
 <body>
+<div id='document'>
 <h1><c:out value="${title}" escapeXml="false" /></h1>
