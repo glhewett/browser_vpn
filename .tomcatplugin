@@ -4,8 +4,8 @@
     <exportSource>false</exportSource>
     <reloadable>true</reloadable>
     <redirectLogger>false</redirectLogger>
-    <updateXml>false</updateXml>
+    <updateXml>true</updateXml>
     <warLocation></warLocation>
     <extraInfo></extraInfo>
-    <webPath></webPath>
+    <webPath>BrowserVPN</webPath>
 </tomcatProjectProperties>
