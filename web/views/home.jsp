@@ -1,3 +1,3 @@
 <jsp:include page="/views/header.jsp" />
-<div id='DataEntry'>There was an error!</div>
+<h1>Home Page</h1>
 <jsp:include page="/views/footer.jsp" />

@@ -1,33 +1,29 @@
-<!-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> -->
+<%@ taglib uri="/WEB-INF/taglibs-input.tld" prefix="input" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <jsp:include page="/views/header.jsp" />
 		
     <div id='content'>
 	
-	  <div id="DataEntryPrompt">BrowserVPN</div>
-	  <form action="Login" method="POST">
-        <div id='DataEntryLabel'>Login Form</div>
-        <div id='DataEntryDescription'>
-            Please Login with your username and password
-        </div>
-        
-        <div id='DataEntryComponent'>
-          <div id="DataEntryLabel">Username</div>
-          <div id="DataEntryText">
-            <input type='text' name='username' value='' />
+	  <div id='prompt'>Please Login</div>
+	  <form name="Login" action='Home' method='POST'>
+        <div id='component'>
+          <div id='label'>Username</div>
+          <div id='textfield'>
+            <input:text name="username" default=""/>
           </div>
         </div>
         
-        <div id='DataEntryComponent'>
-          <div id="DataEntryLabel">Password</div>
-          <div id="DataEntryText">
-            <input type='password' name='password' value='' />
+        <div id='component'>
+          <div id='label'>Password</div>
+          <div id='textfield'>
+            <input:password name="password" default=""/>
           </div>
         </div>
         
-        <div id="DataEntrySubmit">
-          <input type="submit" name="action" value="submit" />       
-        </div> 
+        <div id='submit'>
+          <input type="submit" name="action" value="Login" />       
+        </div>
 	  </form>
     </div>
 

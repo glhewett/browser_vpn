@@ -1,9 +1,3 @@
-/*
- * Created on Dec 8, 2004
- *
- * TODO To change the template for this generated file go to
- * Window - Preferences - Java - Code Style - Code Templates
- */
 package com.strand3.manager;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,17 +9,17 @@ import com.strand3.app.AppActionAdapter;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Login extends AppActionAdapter {
+public class Home extends AppActionAdapter {
 	
 	public String run (HttpServletRequest req) {
 		
 		// set page attributes
-		req.setAttribute("title", "Login");
+		req.setAttribute("title", req.getAttribute("title") + " - Login");
 		
 		// if the method is get, then this is probably the first time on
 		// this page.
 		if (req.getMethod() == "GET") {
-			return "login.jsp";
+			return "error.jsp";
 		}
 
         // It is required for the user to provide and username and a
@@ -38,6 +32,13 @@ public class Login extends AppActionAdapter {
 		if (0 == req.getParameter("password").length()) {
 			handleException(req, new Exception("Username is required"));
 		}
+		
+		if (req.getParameter("username") == "greg" &&
+			req.getParameter("password") == "greg") {
+			req.setAttribute("title", req.getAttribute("title") + " - Home");
+			return "home.jsp";
+		}
+		
 		return "login.jsp";
 	}
 }

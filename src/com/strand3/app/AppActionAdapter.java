@@ -38,8 +38,7 @@ public abstract class AppActionAdapter implements AppAction {
     public static String handleException(Object host, HttpServletRequest request, Exception e) {
         request.setAttribute("exception", e);
         request.setAttribute("message", "Error in action handler "+host.getClass().getName());
-        return "common/error.jsp";
-        
+        return "error.jsp";   
     }
 
     public String handleException(HttpServletRequest request, Exception e) {

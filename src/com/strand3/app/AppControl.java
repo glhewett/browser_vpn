@@ -32,20 +32,34 @@ public class AppControl extends HttpServlet {
 		
 		try {
         	// create action handler class by name
-            Class actionclass=null;
+            Class actionclass;
+            
             try {
-                actionclass = Class.forName(getInitParameter("defaultClass") + "." + pathsplit[1]);             
-            } catch (ClassNotFoundException cnf) {
+                actionclass = Class.forName(getInitParameter("defaultClass") + 
+                		                    "." + pathsplit[1]);             
+            } 
+            catch (ClassNotFoundException cnf) {
                 //Try searching for the class directly
-                actionclass = Class.forName(pathsplit[1]);
+                //actionclass = Class.forName(pathsplit[1]);
+           
+            	//We should return a 404 here, but I am not sure how to do that.
+            	res.addHeader("status", "404");
+                //RequestDispatcher dispatcher = req.getRequestDispatcher(getInitParameter("viewsDir") + "error.jsp");
+                //dispatcher.forward(req, res);
+                return;
             }
         	AppAction actionhandler = (AppAction)actionclass.newInstance();
         	
-        	// polymorphic call to abstract run() method
+        	// Create default properties.
+            req.setAttribute("title", "BrowserVPN");
+        	
+            // polymorphic call to abstract run() method
             String view=actionhandler.run(req);
-            req.setAttribute("title", "umm");
+
             // Add view directory to the beginning of the view
             view = getInitParameter("viewsDir") + view;
+            
+            
             
             // forward to view returned from actionhandler
             RequestDispatcher dispatcher = req.getRequestDispatcher(view);
