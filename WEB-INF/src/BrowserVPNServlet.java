@@ -7,7 +7,9 @@
 import java.io.*;
 import javax.servlet.http.*;
 import javax.servlet.*;
-//import ProxyURL;
+
+import com.strand3.proxy.ProxyHandler;
+import com.strand3.proxy.ProxyHandlerFactory;
 
 /**
  * @author grehewe
@@ -20,26 +22,23 @@ public class BrowserVPNServlet extends HttpServlet {
 	public void doGet (HttpServletRequest req, HttpServletResponse res) 
 		throws ServletException, IOException
 	{
-		BaseProxyHandler ph;
-		
-		ph = new DefaultProxyHandler(req.getPathInfo());
-		
-		ph.setScheme(req.getScheme());
+	    ProxyHandler ph = null;
+	    
+	    try {
+	        ph = ProxyHandlerFactory.getProxyHandler(req.getPathInfo());
+		    //System.err.println("Using Class: " + ph.getClass().getName());
+	    }
+	    catch (Exception e) {
+	        System.err.println("Error: " + e);
+	        return;
+	    }
+
+	    ph.setScheme(req.getScheme());
 		ph.setServerName(req.getServerName());
 		ph.setServerPort(req.getServerPort());
 		ph.setContextPath(req.getContextPath());
 		ph.setServletPath(req.getServletPath());
-		
-		
-		// set up response
-		ph.prepareResponse();
-		//System.err.println("Setting Content-type to " + ph.getContentType());
-		res.setContentType(ph.getContentType());
-		res.setContentLength(ph.getContentLength());
-		PrintWriter out = res.getWriter();
-		//System.out.print(ph.getURLContent());
-		out.print(ph.getURLContent());
-		out.close();
+		ph.doProxy(res.getOutputStream());
 	}
 	
 	public void doPost (HttpServletRequest req, HttpServletResponse res) 
