@@ -20,7 +20,7 @@ import com.strand3.proxy.ProxyHandlerFactory;
 public class BrowserVPNServlet extends HttpServlet {
 	
 	public void doGet (HttpServletRequest req, HttpServletResponse res) 
-		throws ServletException, IOException
+        throws ServletException, IOException
 	{
 	    ProxyHandler ph = null;
 	    
