@@ -1,0 +1,86 @@
+body {
+    position: absolute:
+    right: 300px;
+    background-color: #fff;
+    font-family: arial, sans-serif;
+    font-size: 10pt;
+    margin: 10px;
+    width: 200px;
+	border: 1px solid #ff0000;
+}
+
+#Content {
+	position: absolute;
+	right: 200;
+    left: 10%;
+	padding: 25px;
+	background-color: #CBCBCB;
+	border: 1px solid #333333;
+    margin-top: 20px;
+}
+
+#DataEntryPrompt {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+	margin-top: 10px;
+	border-top: solid;
+}
+
+#DataSubEntryPrompt {
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+#DataEntryComponent {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+}
+#DataEntryRadio {
+	position: absolute;
+	top: 8px;
+}
+#DataEntryCheckBox {
+	position: absolute;
+	top: 8px;
+}
+#DataEntryText {
+	position: relative;
+	left: 30px;
+}
+#DataEntryTextArea {
+	position: relative;
+	left: 30px;
+}
+#DataEntryFile {
+	position: relative;
+	left: 30px;
+}
+#DataEntrySelect {
+	position: relative;
+	left: 30px;
+}
+#DataEntrySubmit {
+	position: relative;
+	border-top: solid;
+	padding-left: 10px;
+	padding-top: 10px;
+	border-color-top: #000033;
+	border-width-top: thin;
+}
+#DataEntryLabel {
+	position: relative;
+	font-size: 12px;
+	font-weight: bold;
+	left: 30px;
+	margin-right:30px;
+}
+#DataEntryDescription {
+	position: relative;
+	font-size: 11px;
+	left: 30px;
+	margin-right:30px;
+}

@@ -20,7 +20,31 @@
         <servlet-name>myproxy</servlet-name>
         <url-pattern>/myproxy/*</url-pattern>
     </servlet-mapping>
+
+	<servlet>
+        <servlet-name>AppControl</servlet-name>
+        <servlet-class>com.strand3.app.AppControl</servlet-class>
+        <init-param>
+            <param-name>defaultClass</param-name>
+            <param-value>com.strand3.manager</param-value>
+        </init-param>
+        <init-param>
+            <param-name>viewsDir</param-name>
+            <param-value>/views/</param-value>
+        </init-param>
+    </servlet>
   
+    <servlet-mapping>
+        <servlet-name>AppControl</servlet-name>
+        <url-pattern>/App/*</url-pattern>
+    </servlet-mapping>
+
+  	<!-- Define the Java Standard Tag Library (JSTL) -->
+  	<taglib>
+   		<taglib-uri>http://jakarta.apache.org/taglibs/input-1.0</taglib-uri>
+   		<taglib-location>/WEB-INF/taglibs-input.tld</taglib-location>
+  	</taglib>
+<!-- 
     <servlet>
         <servlet-name>jspAssign</servlet-name>
         <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
@@ -39,5 +63,5 @@
         <servlet-name>jspAssign</servlet-name>
         <url-pattern>*.jsp</url-pattern>
     </servlet-mapping>
-  
+--> 
 </web-app>
